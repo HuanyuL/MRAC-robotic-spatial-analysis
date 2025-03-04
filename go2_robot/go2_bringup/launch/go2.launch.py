@@ -60,13 +60,13 @@ def generate_launch_description():
 
     declare_rviz_cmd = DeclareLaunchArgument(
         'rviz',
-        default_value='False',
+        default_value='True',
         description='Launch rviz'
     )
 
     declare_voxelmap_cmd = DeclareLaunchArgument(
         'voxelmap',
-        default_value='False',
+        default_value='True',
         description='Generate voxel map'
     )
 
