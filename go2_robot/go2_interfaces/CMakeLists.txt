@@ -20,7 +20,13 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/SpeedLevel.srv"
   "srv/SwitchGait.srv"
   "srv/SwitchJoystick.srv"
+  "srv/SaveVoxelCloud.srv"
   DEPENDENCIES
+)
+
+install(PROGRAMS
+  scripts/voxel_map_saver_service.py
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 if(BUILD_TESTING)

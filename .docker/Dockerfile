@@ -45,7 +45,8 @@ RUN pip3 install --no-cache-dir --upgrade pip\
     mypy \
     prospector \
     pylint \
-    numpy \
+    numpy==1.24.3 \
+    open3d \
     opencv-python \
     panda \
     matplotlib \
