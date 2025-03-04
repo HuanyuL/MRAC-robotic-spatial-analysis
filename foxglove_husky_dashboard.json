@@ -1,0 +1,326 @@
+{
+  "configById": {
+    "Teleop!d0xemw": {
+      "topic": "/a200_0000/joy_teleop/cmd_vel",
+      "publishRate": 10,
+      "upButton": {
+        "field": "linear-x",
+        "value": 1
+      },
+      "downButton": {
+        "field": "linear-x",
+        "value": -1
+      },
+      "leftButton": {
+        "field": "angular-z",
+        "value": 1
+      },
+      "rightButton": {
+        "field": "angular-z",
+        "value": -1
+      }
+    },
+    "virtual-joystick.Virtual Joystick!1mfij2h": {
+      "topic": "/a200_0000/joy_teleop/cmd_vel",
+      "publishRate": 30,
+      "maxLinearSpeed": 0.3,
+      "maxAngularSpeed": 0.3
+    },
+    "RawMessages!13m5ozv": {
+      "diffEnabled": false,
+      "diffMethod": "custom",
+      "diffTopicPath": "",
+      "showFullMessageForDiff": false,
+      "topicPath": "/a200_0000/platform/power",
+      "expansion": {
+        "header": "c",
+        "stamp~header": "e"
+      }
+    },
+    "3D!18i6zy7": {
+      "layers": {
+        "845139cb-26bc-40b3-8161-8ab60af4baf5": {
+          "visible": true,
+          "frameLocked": true,
+          "label": "Grid",
+          "instanceId": "845139cb-26bc-40b3-8161-8ab60af4baf5",
+          "layerId": "foxglove.Grid",
+          "size": 10,
+          "divisions": 10,
+          "lineWidth": 1,
+          "color": "#248eff",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "order": 1
+        }
+      },
+      "cameraState": {
+        "perspective": true,
+        "distance": 13.966745921471341,
+        "phi": 64.59250262635693,
+        "thetaOffset": -70.52061737445668,
+        "targetOffset": [
+          -1.8593401267894607,
+          0.3329126059561226,
+          -7.319517150683002e-16
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "targetOrientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "fovy": 45,
+        "near": 0.5,
+        "far": 5000
+      },
+      "followMode": "follow-pose",
+      "scene": {
+        "transforms": {
+          "showLabel": true
+        }
+      },
+      "transforms": {
+        "frame:a200_0000/base_link": {
+          "visible": false
+        },
+        "frame:odom": {
+          "visible": false
+        },
+        "frame:a200_0000/odom": {
+          "visible": false
+        },
+        "frame:base_link": {
+          "visible": false
+        },
+        "frame:base_footprint": {
+          "visible": false
+        },
+        "frame:front_bumper_link": {
+          "visible": false
+        },
+        "frame:front_bumper_mount": {
+          "visible": false
+        },
+        "frame:inertial_link": {
+          "visible": false
+        },
+        "frame:rear_bumper_link": {
+          "visible": false
+        },
+        "frame:rear_bumper_mount": {
+          "visible": false
+        },
+        "frame:top_chassis_link": {
+          "visible": false
+        },
+        "frame:top_plate_front_link": {
+          "visible": false
+        },
+        "frame:top_plate_link": {
+          "visible": false
+        },
+        "frame:top_plate_rear_link": {
+          "visible": false
+        },
+        "frame:user_rail_link": {
+          "visible": false
+        },
+        "frame:front_left_wheel": {
+          "visible": false
+        },
+        "frame:front_right_wheel": {
+          "visible": false
+        },
+        "frame:rear_left_wheel": {
+          "visible": false
+        },
+        "frame:rear_right_wheel": {
+          "visible": false
+        }
+      },
+      "topics": {
+        "/cloud_effected": {
+          "visible": false
+        },
+        "/cloud_registered": {
+          "visible": true,
+          "colorField": "intensity",
+          "colorMode": "colormap",
+          "colorMap": "turbo",
+          "stixelsEnabled": false,
+          "minValue": 0,
+          "decayTime": 10,
+          "pointShape": "circle",
+          "pointSize": 1,
+          "explicitAlpha": 1
+        },
+        "/cloud_registered_body": {
+          "visible": false,
+          "colorField": "intensity",
+          "colorMode": "colormap",
+          "colorMap": "turbo"
+        },
+        "/path": {
+          "visible": true,
+          "gradient": [
+            "#ff6b6bff",
+            "#e80000ff"
+          ]
+        },
+        "/Laser_map": {
+          "visible": true,
+          "colorField": "intensity",
+          "colorMode": "colormap",
+          "colorMap": "turbo"
+        },
+        "/initialpose": {
+          "visible": false
+        }
+      },
+      "publish": {
+        "type": "point",
+        "poseTopic": "/move_base_simple/goal",
+        "pointTopic": "/clicked_point",
+        "poseEstimateTopic": "/initialpose",
+        "poseEstimateXDeviation": 0.5,
+        "poseEstimateYDeviation": 0.5,
+        "poseEstimateThetaDeviation": 0.26179939
+      },
+      "imageMode": {},
+      "followTf": "camera_init"
+    },
+    "Image!2kuufd3": {
+      "cameraState": {
+        "distance": 20,
+        "perspective": true,
+        "phi": 60,
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "targetOffset": [
+          0,
+          0,
+          0
+        ],
+        "targetOrientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "thetaOffset": 45,
+        "fovy": 45,
+        "near": 0.5,
+        "far": 5000
+      },
+      "followMode": "follow-pose",
+      "scene": {},
+      "transforms": {},
+      "topics": {},
+      "layers": {},
+      "publish": {
+        "type": "point",
+        "poseTopic": "/move_base_simple/goal",
+        "pointTopic": "/clicked_point",
+        "poseEstimateTopic": "/initialpose",
+        "poseEstimateXDeviation": 0.5,
+        "poseEstimateYDeviation": 0.5,
+        "poseEstimateThetaDeviation": 0.26179939
+      },
+      "imageMode": {
+        "imageTopic": "/camera_front/image_compressed"
+      }
+    },
+    "Image!3mnp456": {
+      "cameraState": {
+        "distance": 20,
+        "perspective": true,
+        "phi": 60,
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "targetOffset": [
+          0,
+          0,
+          0
+        ],
+        "targetOrientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "thetaOffset": 45,
+        "fovy": 45,
+        "near": 0.5,
+        "far": 5000
+      },
+      "followMode": "follow-pose",
+      "scene": {},
+      "transforms": {},
+      "topics": {},
+      "layers": {},
+      "publish": {
+        "type": "point",
+        "poseTopic": "/move_base_simple/goal",
+        "pointTopic": "/clicked_point",
+        "poseEstimateTopic": "/initialpose",
+        "poseEstimateXDeviation": 0.5,
+        "poseEstimateYDeviation": 0.5,
+        "poseEstimateThetaDeviation": 0.26179939
+      },
+      "imageMode": {
+        "imageTopic": "/camera_back/image_compressed"
+      }
+    }
+  },
+  "globalVariables": {},
+  "userNodes": {},
+  "playbackConfig": {
+    "speed": 1
+  },
+  "layout": {
+    "direction": "row",
+    "first": {
+      "first": {
+        "first": "Teleop!d0xemw",
+        "second": "virtual-joystick.Virtual Joystick!1mfij2h",
+        "direction": "column",
+        "splitPercentage": 59.68639049077805
+      },
+      "second": "RawMessages!13m5ozv",
+      "direction": "column",
+      "splitPercentage": 71.29859387923904
+    },
+    "second": {
+      "first": "3D!18i6zy7",
+      "second": {
+        "first": "Image!2kuufd3",
+        "second": "Image!3mnp456",
+        "direction": "column",
+        "splitPercentage": 50.53763440860215
+      },
+      "direction": "row",
+      "splitPercentage": 61.346153846153854
+    },
+    "splitPercentage": 16.943359375
+  }
+}

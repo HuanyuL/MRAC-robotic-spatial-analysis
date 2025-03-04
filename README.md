@@ -86,3 +86,31 @@ sudo apt install pcl-tools
 9. Open foxglove-studio and change the web address to ``10.42.0.1``
 10. Load the panel from this repository
 
+## Unitree Go2 
+1. Clone this repository
+2. Build the docker image from the go2_robot package
+```
+cd MRAC-robot-spatial-analysis/go2_robot
+.docker/build_image.sh
+```
+3. Run the image 
+```
+.docker/run_user.sh
+```
+Or run the image with Nvidia graphic card
+```
+.docker/run_user_nvidia.sh
+```
+4. Change the ownership of the folder
+```
+sudo chown -R YOUR_USER_NAME /dev_ws
+```
+5. Bringup the robot dog
+```
+ros2 launch go2_bringup go2.launch.py
+```
+6. Build the voxel map from 4D lidar
+```
+ros2 run go2_voxelmap voxelmap_node
+
+```
