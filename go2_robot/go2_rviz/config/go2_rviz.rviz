@@ -3,9 +3,10 @@ Panels:
     Help Height: 89
     Name: Displays
     Property Tree Widget:
-      Expanded: ~
+      Expanded:
+        - /PointCloud22
       Splitter Ratio: 0.5
-    Tree Height: 443
+    Tree Height: 829
   - Class: rviz_common/Selection
     Name: Selection
   - Class: rviz_common/Tool Properties
@@ -51,127 +52,19 @@ Visualization Manager:
       Reference Frame: <Fixed Frame>
       Value: true
     - Class: rviz_default_plugins/TF
-      Enabled: true
+      Enabled: false
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        FL_calf:
-          Value: true
-        FL_calflower:
-          Value: true
-        FL_calflower1:
-          Value: true
-        FL_foot:
-          Value: true
-        FL_hip:
-          Value: true
-        FL_thigh:
-          Value: true
-        FR_calf:
-          Value: true
-        FR_calflower:
-          Value: true
-        FR_calflower1:
-          Value: true
-        FR_foot:
-          Value: true
-        FR_hip:
-          Value: true
-        FR_thigh:
-          Value: true
-        Head_lower:
-          Value: true
-        Head_upper:
-          Value: true
-        RL_calf:
-          Value: true
-        RL_calflower:
-          Value: true
-        RL_calflower1:
-          Value: true
-        RL_foot:
-          Value: true
-        RL_hip:
-          Value: true
-        RL_thigh:
-          Value: true
-        RR_calf:
-          Value: true
-        RR_calflower:
-          Value: true
-        RR_calflower1:
-          Value: true
-        RR_foot:
-          Value: true
-        RR_hip:
-          Value: true
-        RR_thigh:
-          Value: true
-        base_link:
-          Value: true
-        camera_link:
-          Value: true
-        hesai_lidar:
-          Value: true
-        imu:
-          Value: true
-        odom:
-          Value: true
-        radar:
-          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: false
       Tree:
-        odom:
-          base_link:
-            FL_hip:
-              FL_thigh:
-                FL_calf:
-                  FL_calflower:
-                    FL_calflower1:
-                      {}
-                  FL_foot:
-                    {}
-            FR_hip:
-              FR_thigh:
-                FR_calf:
-                  FR_calflower:
-                    FR_calflower1:
-                      {}
-                  FR_foot:
-                    {}
-            Head_upper:
-              Head_lower:
-                {}
-              camera_link:
-                {}
-            RL_hip:
-              RL_thigh:
-                RL_calf:
-                  RL_calflower:
-                    RL_calflower1:
-                      {}
-                  RL_foot:
-                    {}
-            RR_hip:
-              RR_thigh:
-                RR_calf:
-                  RR_calflower:
-                    RR_calflower1:
-                      {}
-                  RR_foot:
-                    {}
-            hesai_lidar:
-              {}
-            imu:
-              {}
-            radar:
-              {}
+        {}
       Update Interval: 0
-      Value: true
+      Value: false
     - Alpha: 1
       Class: rviz_default_plugins/RobotModel
       Collision Enabled: false
@@ -325,16 +218,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        camera_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hesai_lidar:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         imu:
           Alpha: 1
           Show Axes: false
@@ -363,12 +246,12 @@ Visualization Manager:
       Color: 255; 255; 255
       Color Transformer: Intensity
       Decay Time: 0
-      Enabled: true
+      Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 216
+      Max Intensity: 255
       Min Color: 0; 0; 0
-      Min Intensity: 74
+      Min Intensity: 68
       Name: PointCloud2
       Position Transformer: XYZ
       Selectable: true
@@ -382,6 +265,40 @@ Visualization Manager:
         History Policy: Keep Last
         Reliability Policy: Reliable
         Value: /pointcloud
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: false
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 1.3249999284744263
+        Min Value: -0.17499999701976776
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz_default_plugins/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: AxisColor
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 4096
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: PointCloud2
+      Position Transformer: XYZ
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.009999999776482582
+      Style: Flat Squares
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /voxel_point_cloud
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
@@ -431,7 +348,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 2.064781665802002
+      Distance: 4.200536251068115
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -446,18 +363,18 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.4752010107040405
+      Pitch: 0.5602007508277893
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.166723251342773
+      Yaw: 3.1417253017425537
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 751
+  Height: 1131
   Hide Left Dock: false
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd00000003000000000000015600000251fc020000000bfb0000001200530065006c0065006300740069006f006e000000003d000000820000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d00000251000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb000000480043006f0072006500730065006e0073006500200049006e0073007400720075006d0065006e0074006100740069006f006e0020005200760069007a002000500061006e0065006c01000002de000000b50000000000000000fb0000001e0043006f0072006500730065006e00730065005f00500061006e0065006c0100000176000001180000000000000000fb0000000a0049006d00610067006501000002e8000000ab0000000000000000000000010000015d0000037cfc0200000005fb0000000a00560069006500770073000000003d0000037c000000a400fffffffb0000003e0043006f0072006500730065006e0073006500200049006e0073007400720075006d0065006e0074006100740069006f006e002000500061006e0065006c000000003d0000037c0000000000000000fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003d00000251000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b2000000000000000000000003000005a00000003efc0100000002fb0000000800540069006d00650100000000000005a0000002fb00fffffffb0000000800540069006d00650100000000000004500000000000000000000004440000025100000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd000000030000000000000156000003d1fc020000000cfb0000001200530065006c0065006300740069006f006e000000003d000000820000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003b000003d1000000c700fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb000000480043006f0072006500730065006e0073006500200049006e0073007400720075006d0065006e0074006100740069006f006e0020005200760069007a002000500061006e0065006c01000002de000000b50000000000000000fb0000001e0043006f0072006500730065006e00730065005f00500061006e0065006c0100000176000001180000000000000000fb0000000a0049006d00610067006501000002e8000000ab0000000000000000fb0000000c00430061006d006500720061000000033f000000cd0000000000000000000000010000015d0000037cfc0200000005fb0000000a00560069006500770073000000003d0000037c000000a000fffffffb0000003e0043006f0072006500730065006e0073006500200049006e0073007400720075006d0065006e0074006100740069006f006e002000500061006e0065006c000000003d0000037c0000000000000000fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003d00000251000000a000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b2000000000000000000000003000007800000003efc0100000002fb0000000800540069006d00650100000000000007800000025300fffffffb0000000800540069006d0065010000000000000450000000000000000000000624000003d100000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -466,6 +383,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: false
-  Width: 1440
-  X: 2208
-  Y: 74
+  Width: 1920
+  X: 0
+  Y: 32
