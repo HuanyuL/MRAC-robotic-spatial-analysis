@@ -133,13 +133,7 @@ sudo apt install pcl-tools
      sudo chown -R YOUR_USER_NAME /dev_ws
      ```
 
-5. **Bring up the robot dog**:
-   - Bring up the robot dog with ROS2:
-     ```bash
-     ros2 launch go2_bringup go2.launch.py
-     ```
-
-6. **Terminal Setup for Go2 Robot**:
+5. **Terminal Setup for Go2 Robot**:
 
    **Terminal 1 (Go2 Bringup)**:
    - In the first terminal, bring up the robot dog:
@@ -172,7 +166,7 @@ sudo apt install pcl-tools
      ```bash
      ros2 bag record /tf /pointcloud /utlidar/robot_odom /camera/compressed
      ```
-     **Warning**: Make sure your computer has enough space for recording, and **do not record for too long** to avoid filling up the disk. You can stop the recording by pressing `Ctrl + C`.
+     **Warning**: Make sure your computer has enough space for recording, and **do not record for too long** to avoid filling up the disk. You can stop the recording by pressing `Ctrl + C` and you need to download it from the container.
 
    **OPTIONAL Terminal 6 (save the map)**
    - **Important**: You must wait for the scanning to finish before saving the map. **AND PLEASE CHANGE THE PATH!!!!!!!!!!!!!!!!**
