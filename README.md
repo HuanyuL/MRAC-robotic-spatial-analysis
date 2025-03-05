@@ -52,65 +52,132 @@ sudo apt install pcl-tools
 
 
 ## Usage
-## Husky Connection
 
-1. Connect to the iaac_husky hotspot (WIFI password: EnterIaac22@)
-2. Open a terminal in your computer and ssh to the husky (user password: iaac)
-   ```
-   ssh iaac@10.42.0.1
-   ```
-3. Use tmux as the terminal on husky robot
-   ```
-   tmux new -s husky
-   ```
-4. launch the ros2 nodes for mobile base (first tmux terminal)
-   ```
-   ros2 launch /etc/clearpath/platform/launch/platform-service.launch.py
-   ```
-5. launch the ros2 nodes for lidar (second tmux terminal)
-   ```
-   ros2 launch livox_ros_driver2 msg_MID360_launch.py
-   ```
-6. launch the mapping node (third tmux terminal)
-   ```
-   ros2 launch fast_lio mapping.launch.py
-   ```
-7. launch the usb_cam node to bring up the camera (fourth tmux terminal)
-   ```
-   ros2 launch usb_cam camera.launch.py
-   ```
-8. launch the foxglove bridge for visualization (fifth tmux terminal)
-   ```
-   ros2 launch foxglove_bridge foxglove_bridge_launch.xml
-   ```
-9. Open foxglove-studio and change the web address to ``10.42.0.1``
-10. Load the panel from this repository
+### Husky Connection
 
-## Unitree Go2 
-1. Clone this repository
-2. Build the docker image from the go2_robot package
-```
-cd MRAC-robot-spatial-analysis/go2_robot
-.docker/build_image.sh
-```
-3. Run the image 
-```
-.docker/run_user.sh
-```
-Or run the image with Nvidia graphic card
-```
-.docker/run_user_nvidia.sh
-```
-4. Change the ownership of the folder
-```
-sudo chown -R YOUR_USER_NAME /dev_ws
-```
-5. Bringup the robot dog
-```
-ros2 launch go2_bringup go2.launch.py
-```
-6. Build the voxel map from 4D lidar
-```
-ros2 run go2_voxelmap voxelmap_node
+1. **Connect to the Husky robot**:
+   - Connect to the **iaac_husky** hotspot (WIFI password: `EnterIaac22@`).
+   - Open a terminal on your computer and SSH into the Husky robot (user password: `iaac`):
+     ```bash
+     ssh iaac@10.42.0.1
+     ```
 
-```
+2. **Using tmux for terminal management**:
+   - Start a new tmux session:
+     ```bash
+     tmux new -s husky
+     ```
+     This command will start a new tmux session named `husky`.
+
+3. **Split the tmux terminal**:
+   - Once inside tmux, you can split the terminal window to launch multiple processes concurrently. To split the tmux terminal:
+     - Press `Ctrl + B`, then release both keys and press `%` to split the terminal vertically.
+     - To split horizontally, press `Ctrl + B`, then release both keys and press `"` (double quote).
+
+4. **Launch the ROS2 nodes in separate tmux panes**:
+
+   **Terminal 1 (Mobile Base)**:
+   - In the first tmux pane, launch the mobile base:
+     ```bash
+     ros2 launch /etc/clearpath/platform/launch/platform-service.launch.py
+     ```
+
+   **Terminal 2 (LiDAR)**:
+   - In the second tmux pane, launch the LiDAR:
+     ```bash
+     ros2 launch livox_ros_driver2 msg_MID360_launch.py
+     ```
+
+   **Terminal 3 (Mapping)**:
+   - In the third tmux pane, launch the mapping node:
+     ```bash
+     ros2 launch fast_lio mapping.launch.py
+     ```
+
+   **Terminal 4 (Foxglove Bridge)**:
+   - In the fourth tmux pane, launch the Foxglove bridge:
+     ```bash
+     ros2 launch foxglove_bridge foxglove_bridge_launch.xml
+     ```
+
+5. **Open Foxglove Studio**:
+   - Open **Foxglove Studio** and set the web address to `10.42.0.1`.
+   - Load the panel from this repository to visualize the data.
+
+### Unitree Go2 Robot
+
+1. **Clone the repository**:
+   - Clone the MRAC-robot-spatial-analysis repository to your system.
+
+2. **Build the Docker image**:
+   - **Note**: You only need to build the image when using the Unitree Go2 robot.
+   - Navigate to the `go2_robot` package directory and build the Docker image:
+     ```bash
+     cd MRAC-robot-spatial-analysis/go2_robot
+     .docker/build_image.sh
+     ```
+
+3. **Run the Docker image**:
+   - To run the image, use the following command:
+     ```bash
+     .docker/run_user.sh
+     ```
+   - Or, if you're using an Nvidia graphic card, run the image with the Nvidia runtime:
+     ```bash
+     .docker/run_user_nvidia.sh
+     ```
+
+4. **Change the folder ownership**:
+   - To avoid permission issues, change the ownership of the workspace folder:
+     ```bash
+     sudo chown -R YOUR_USER_NAME /dev_ws
+     ```
+
+5. **Bring up the robot dog**:
+   - Bring up the robot dog with ROS2:
+     ```bash
+     ros2 launch go2_bringup go2.launch.py
+     ```
+
+6. **Terminal Setup for Go2 Robot**:
+
+   **Terminal 1 (Go2 Bringup)**:
+   - In the first terminal, bring up the robot dog:
+     ```bash
+     ros2 launch go2_bringup go2.launch.py
+     ```
+
+   **Terminal 2 (RQT Visualization)**:
+   - In the second terminal, use RQT to visualize the camera image or other sensor data:
+     ```bash
+     rqt
+     ```
+     You can use `rqt_image_view` to see the camera feed or other visualization plugins for other sensors.
+
+   **Terminal 3 (Teleoperation)**:
+   - In the third terminal, use the keyboard teleoperation for controlling the robot:
+     ```bash
+     ros2 run teleop_twist_keyboard teleop_twist_keyboard
+     ```
+     This will allow you to control the Unitree Go2 robot using the keyboard.
+
+   **Terminal 4 (Map Saver Service)**:
+   - In the fourth terminal, use the map saver service to save the generated voxel map:
+     ```bash
+     ros2 run go2_interfaces voxel_map_saver
+     ```
+
+   **OPTIONAL Terminal 5 (Rosbag Recording)**:
+   - If you want to record the data to a rosbag, use the following command to record the selected topics:
+     ```bash
+     ros2 bag record /tf /pointcloud /utlidar/robot_odom /camera/compressed
+     ```
+     **Warning**: Make sure your computer has enough space for recording, and **do not record for too long** to avoid filling up the disk. You can stop the recording by pressing `Ctrl + C`.
+
+   **OPTIONAL Terminal 6 (save the map)**
+   - **Important**: You must wait for the scanning to finish before saving the map. **AND PLEASE CHANGE THE PATH!!!!!!!!!!!!!!!!**
+   - Once the scanning is complete, you can save the voxel map using the following service call:
+     ```bash
+     ros2 service call /save_voxel_cloud go2_interfaces/srv/SaveVoxelCloud "{filename: '/YOUR FILE PATH/export.pcd'}"
+     ```
+
