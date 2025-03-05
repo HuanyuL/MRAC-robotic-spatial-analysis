@@ -174,4 +174,4 @@ sudo apt install pcl-tools
      ```bash
      ros2 service call /save_voxel_cloud go2_interfaces/srv/SaveVoxelCloud "{filename: '/YOUR FILE PATH/export.pcd'}"
      ```
-
+⚠️⚠️⚠️⚠️⚠️ ***MAKE SURE TO RESTART THE ROBOT BEFORE RESTARTING THE CLIENT (HANDLE IT BEFORE RESTARTING AS IT WILL FALL DOWN)!!!!!!***
